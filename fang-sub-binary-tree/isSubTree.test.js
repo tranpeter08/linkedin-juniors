@@ -49,12 +49,35 @@ tree6.right.right = new Node(6);
 tree6.left.left.left = new Node(7);
 tree6.left.left.right = new Node(8);
 
+const treeS = new Node(3);
+
+treeS.left = new Node(4);
+treeS.right = new Node(5);
+
+treeS.left.left = new Node(1);
+treeS.left.right = new Node(2);
+
+const treeT = new Node(4);
+treeT.left = new Node(1);
+treeT.right = new Node(2);
+
+const treeS2 = new Node(3);
+
+treeS2.left = new Node(4);
+treeS2.right = new Node(5);
+
+treeS2.left.left = new Node(1);
+treeS2.left.right = new Node(2);
+treeS2.left.right.left = new Node(0);
+
 describe('subTree()', () => {
-  it('determines if the sub tree is a sub tree of given tree', () => {
+  it('determines if the a tree is a sub tree of given tree', () => {
     expect(isSubTree(tree, tree2)).toBe(true);
     expect(isSubTree(tree, tree3)).toBe(true);
     expect(isSubTree(tree, tree4)).toBe(false);
     expect(isSubTree(tree, tree5)).toBe(false);
     expect(isSubTree(tree, tree6)).toBe(true);
+    expect(isSubTree(treeS, treeT)).toBe(true);
+    expect(isSubTree(treeS2, treeT)).toBe(false);
   })
 });
